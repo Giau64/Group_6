@@ -37,7 +37,33 @@ namespace Calculator
             }
         }
 
-        
+        private double MultiplyNum(double a, double b) //Declaring Methods
+        {
+            result = a * b;
+
+            return result;
+        }
+
+        private void btnMulti_Click(object sender, EventArgs e)
+        {
+      
+                try
+                {
+                    num1 = double.Parse(txtNum1.Text);
+                    num2 = double.Parse(txtNum2.Text);
+
+                    txtResult.Text = MultiplyNum(num1, num2).ToString();
+                    /*Method Invocation*/
+                }
+                catch
+                {
+                    txtResult.Text = "Please enter num2er!"; //Error when user enters invalid value
+
+                    txtNum1.Clear();
+                    txtNum2.Clear();
+                }
+            
+        }
 
         private double AddNum(double a, double b) //Declaring Methods
         {
